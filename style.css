@@ -1196,6 +1196,8 @@ footer small {
 /* ==========================================================================
    PERFORMANCE OPTIMIZATIONS
    ========================================================================== */
+/* Desativado temporariamente - causava problemas de renderização no desktop */
+/*
 .cronograma,
 .objecoes,
 .garantia,
@@ -1204,5 +1206,5 @@ footer small {
 .faq {
   content-visibility: auto;
   contain-intrinsic-size: 800px;
-  /* Estimativa de altura para evitar layout shift */
 }
+*/
