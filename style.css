@@ -314,11 +314,15 @@ body {
 }
 
 .lote-inline-progress span {
-  font-size: 0.6rem;
-  color: var(--color-secondary);
-  font-weight: 700;
+  font-size: 0.75rem;
+  color: #fff;
+  background: linear-gradient(135deg, #f43f5e, #ec4899);
+  padding: 0.2em 0.6em;
+  border-radius: 4px;
+  font-weight: 800;
   text-transform: uppercase;
   white-space: nowrap;
+  box-shadow: 0 2px 8px rgba(244, 63, 94, 0.4);
 }
 
 /* Hero Foto */
