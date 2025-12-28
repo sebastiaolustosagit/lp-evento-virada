@@ -1,0 +1,1208 @@
+/* ==========================================================================
+   A VIRADA 2026 - Landing Page Styles
+   Visual: Dark Mode Premium com Gradientes Roxo/Rosa/Laranja
+   ========================================================================== */
+
+/* ==========================================================================
+   CSS Variables - Tema A Virada
+   ========================================================================== */
+:root {
+  /* Cores principais */
+  --color-primary: #8B5CF6;
+  --color-primary-dark: #7C3AED;
+  --color-secondary: #EC4899;
+  --color-accent: #F97316;
+
+  /* Gradientes */
+  --gradient-primary: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+  --gradient-highlight: linear-gradient(135deg, var(--color-secondary), var(--color-accent));
+  --gradient-cta: linear-gradient(135deg, var(--color-primary), var(--color-secondary), var(--color-accent));
+
+  /* Cores de fundo */
+  --bg-dark: #0a0a0f;
+  --bg-card: rgba(255, 255, 255, 0.03);
+  --bg-card-hover: rgba(255, 255, 255, 0.06);
+
+  /* Cores de texto */
+  --text-primary: #ffffff;
+  --text-secondary: rgba(255, 255, 255, 0.7);
+  --text-muted: rgba(255, 255, 255, 0.5);
+
+  /* Bordas */
+  --border-color: rgba(255, 255, 255, 0.1);
+
+  /* Sombras */
+  --shadow-glow: 0 0 40px rgba(139, 92, 246, 0.3);
+  --shadow-card: 0 4px 24px rgba(0, 0, 0, 0.4);
+
+  /* Layout */
+  --container-max: 1100px;
+  --section-spacing: 5rem;
+  --border-radius: 16px;
+}
+
+/* ==========================================================================
+   Base Overrides
+   ========================================================================== */
+html {
+  color-scheme: dark;
+  scroll-behavior: smooth;
+}
+
+@media (max-width: 600px) {
+  html {
+    font-size: 100% !important;
+    /* Reset forçado para ganhar espaço em mobile */
+  }
+}
+
+body {
+  background: var(--bg-dark);
+  color: var(--text-primary);
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  line-height: 1.7;
+}
+
+/* Smooth scroll content fix */
+#smooth-content>main,
+#smooth-content>footer {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.container {
+  max-width: var(--container-max);
+  padding-inline: 1.25rem;
+}
+
+@media (max-width: 600px) {
+  .container {
+    padding-inline: 0.75rem !important;
+  }
+}
+
+/* ==========================================================================
+   TOP BAR - Contador
+   ========================================================================== */
+.top-bar {
+  background: #dc2626;
+  padding: 0.5rem 0.75rem;
+  text-align: center;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.top-bar p {
+  margin: 0;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: white;
+  letter-spacing: 0.5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.35rem;
+  flex-wrap: wrap;
+}
+
+.top-bar strong {
+  background: #fbbf24;
+  color: #000;
+  padding: 0.15em 0.4em;
+  border-radius: 4px;
+  font-family: 'Courier New', monospace;
+  font-weight: 800;
+  font-size: 0.7rem;
+}
+
+@media (max-width: 400px) {
+  .top-bar {
+    padding-inline: 0.25rem;
+    /* Reduz padding para ganhar espaço */
+  }
+
+  .top-bar p {
+    font-size: 0.75rem;
+    /* Aumenta de 0.65rem para 0.75rem (~12px) */
+    gap: 0.25rem;
+  }
+
+  .top-bar strong {
+    font-size: 0.75rem;
+    /* Acompanha o tamanho do texto */
+    padding: 0.1em 0.3em;
+  }
+}
+
+/* ==========================================================================
+   HERO SECTION
+   ========================================================================== */
+.hero {
+  min-height: 90vh;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  padding: 3rem 1.25rem;
+  background:
+    radial-gradient(ellipse at top, rgba(139, 92, 246, 0.15) 0%, transparent 60%),
+    radial-gradient(ellipse at bottom right, rgba(236, 72, 153, 0.1) 0%, transparent 50%),
+    var(--bg-dark);
+}
+
+.hero--compact {
+  min-height: auto;
+  padding: 0 1rem 1.5rem !important;
+}
+
+.hero--compact .container {
+  max-width: 700px;
+  padding-top: 0;
+  margin-top: 0;
+}
+
+.hero .container {
+  max-width: 900px;
+}
+
+.hero-tag {
+  display: inline-block;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 0.35rem 1rem;
+  border-radius: 50px;
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-top: 0;
+  margin-bottom: 0.75rem;
+}
+
+.hero h1 {
+  font-size: clamp(1.4rem, 4.5vw, 2.5rem);
+  font-weight: 800;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+}
+
+.hero--compact h1 {
+  font-size: clamp(1.25rem, 4vw, 2rem);
+  margin-bottom: 0.75rem;
+}
+
+.highlight {
+  background: var(--gradient-highlight);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.highlight-box {
+  background: var(--gradient-highlight);
+  padding: 0.1em 0.4em;
+  border-radius: 4px;
+  color: white;
+  font-weight: 700;
+  white-space: nowrap;
+  -webkit-text-fill-color: white;
+}
+
+.hero-subtitle {
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  max-width: 600px;
+  margin: 0 auto 1.25rem;
+  line-height: 1.5;
+}
+
+.hero--compact .hero-subtitle {
+  font-size: 0.85rem;
+  margin-bottom: 1rem;
+}
+
+/* Lotes Inline (formato compacto) */
+.lotes-inline {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+  max-width: 400px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.lote-inline {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid var(--border-color);
+  font-size: 0.85rem;
+}
+
+.lote-inline-nome {
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.lote-inline-preco {
+  font-weight: 700;
+  font-size: 1rem;
+}
+
+.lote-inline--ativo .lote-inline-preco {
+  color: #22c55e;
+}
+
+.lote-inline-status {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--text-muted);
+}
+
+.lote-inline--esgotado {
+  opacity: 0.5;
+}
+
+.lote-inline--esgotado .lote-inline-status {
+  color: #ef4444;
+}
+
+.lote-inline--ativo {
+  flex-wrap: wrap;
+}
+
+.lote-inline--breve {
+  opacity: 0.6;
+  border-bottom: none;
+  justify-content: center;
+  gap: 0.5rem;
+  font-size: 0.75rem;
+  margin-top: 0.5rem;
+}
+
+.lote-inline-progress {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 0.25rem;
+}
+
+.lote-inline-progress-bar {
+  flex: 1;
+  height: 4px;
+  background: var(--gradient-highlight);
+  border-radius: 2px;
+  position: relative;
+  overflow: hidden;
+}
+
+.lote-inline-progress-bar::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+  animation: shimmer 2s infinite;
+}
+
+.lote-inline-progress span {
+  font-size: 0.6rem;
+  color: var(--color-secondary);
+  font-weight: 700;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+/* Hero Foto */
+.hero-foto {
+  margin-top: 0.5rem;
+  margin-bottom: -1rem;
+}
+
+.hero-foto img {
+  width: 240px;
+  height: 240px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: top center;
+  margin: 0 auto;
+  display: block;
+  border: 4px solid transparent;
+  background:
+    linear-gradient(var(--bg-dark), var(--bg-dark)) padding-box,
+    var(--gradient-highlight) border-box;
+  box-shadow: 0 0 30px rgba(236, 72, 153, 0.4);
+}
+
+/* Garantia Selo */
+.garantia-selo {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  margin-top: 0.75rem;
+  font-size: 0.7rem;
+  color: var(--text-muted);
+}
+
+.garantia-selo svg {
+  color: #22c55e;
+}
+
+/* CTA Button Arrow */
+.btn-arrow {
+  margin-left: 0.5rem;
+  font-size: 1.1em;
+}
+
+.lote {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  padding: 1rem 1.5rem;
+  min-width: 140px;
+  text-align: center;
+}
+
+.lote-nome {
+  display: block;
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 0.25rem;
+}
+
+.lote-preco {
+  display: block;
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 0.25rem;
+}
+
+.lote-status {
+  display: block;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.lote--esgotado {
+  opacity: 0.5;
+}
+
+.lote--esgotado .lote-status {
+  color: #ef4444;
+}
+
+.lote--ativo {
+  border-color: var(--color-primary);
+  box-shadow: var(--shadow-glow);
+}
+
+.lote--ativo .lote-status {
+  color: #22c55e;
+}
+
+.lote--breve {
+  opacity: 0.7;
+}
+
+.lote--breve .lote-status {
+  color: var(--color-accent);
+}
+
+/* Barra de Progresso - Lote Hero */
+.lote-progress {
+  margin-top: 0.75rem;
+  position: relative;
+}
+
+.lote-progress-bar {
+  height: 6px;
+  background: var(--gradient-highlight);
+  border-radius: 3px;
+  position: relative;
+  overflow: hidden;
+}
+
+.lote-progress-bar::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  animation: shimmer 2s infinite;
+}
+
+@keyframes shimmer {
+  0% {
+    transform: translateX(-100%);
+  }
+
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+.lote-progress-text {
+  display: block;
+  font-size: 0.65rem;
+  color: var(--color-secondary);
+  margin-top: 0.25rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* CTA Buttons */
+.btn-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--gradient-cta);
+  background-size: 200% 200%;
+  color: white;
+  font-size: 1rem;
+  font-weight: 700;
+  padding: 1rem 2.5rem;
+  border-radius: 50px;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 20px rgba(139, 92, 246, 0.4);
+  animation: gradientShift 3s ease infinite;
+}
+
+.btn-cta:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(139, 92, 246, 0.5);
+}
+
+@keyframes gradientShift {
+
+  0%,
+  100% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+/* Garantia Selo */
+.garantia-selo {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 1.5rem;
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+}
+
+.garantia-selo svg {
+  color: #22c55e;
+}
+
+/* ==========================================================================
+   BADGES SECTION
+   ========================================================================== */
+.badges {
+  padding: 2rem 1.25rem;
+  text-align: center;
+  background: rgba(0, 0, 0, 0.3);
+}
+
+.badges-intro {
+  margin-bottom: 2rem;
+  font-size: 1.1rem;
+  color: var(--text-secondary);
+}
+
+.badges-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.badge-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius);
+  padding: 1.25rem;
+  text-align: left;
+}
+
+.badge-icon {
+  flex-shrink: 0;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--gradient-primary);
+  border-radius: 12px;
+}
+
+.badge-icon svg {
+  color: white;
+}
+
+.badge-text strong {
+  display: block;
+  font-size: 1rem;
+  margin-bottom: 0.25rem;
+}
+
+.badge-text span {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+}
+
+/* ==========================================================================
+   CRONOGRAMA SECTION
+   ========================================================================== */
+.cronograma {
+  padding: var(--section-spacing) 1.25rem;
+}
+
+.section-title {
+  text-align: center;
+  font-size: clamp(1.5rem, 4vw, 2.25rem);
+  font-weight: 800;
+  margin-bottom: 0.75rem;
+}
+
+.section-subtitle {
+  text-align: center;
+  color: var(--text-secondary);
+  max-width: 600px;
+  margin: 0 auto 3rem;
+}
+
+/* Timeline */
+.timeline {
+  position: relative;
+  max-width: 800px;
+  margin: 0 auto 3rem;
+}
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 24px;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: var(--gradient-primary);
+}
+
+.timeline-item {
+  position: relative;
+  padding-left: 70px;
+  padding-bottom: 2.5rem;
+}
+
+.timeline-item:last-child {
+  padding-bottom: 0;
+}
+
+.timeline-marker {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg-dark);
+  border: 2px solid var(--color-primary);
+  border-radius: 50%;
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--color-primary);
+}
+
+.timeline-content {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius);
+  padding: 1.5rem;
+}
+
+.timeline-content h3 {
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
+  color: var(--text-primary);
+}
+
+.timeline-content ul {
+  margin: 0 0 1rem;
+  padding-left: 1.25rem;
+}
+
+.timeline-content li {
+  color: var(--text-secondary);
+  margin-bottom: 0.5rem;
+}
+
+.timeline-result {
+  background: rgba(139, 92, 246, 0.1);
+  border-left: 3px solid var(--color-primary);
+  padding: 0.75rem 1rem;
+  border-radius: 0 8px 8px 0;
+  font-size: 0.9rem;
+}
+
+.timeline-item--highlight .timeline-marker {
+  background: var(--gradient-highlight);
+  border: none;
+  color: white;
+}
+
+.timeline-item--highlight .timeline-content {
+  border-color: var(--color-secondary);
+}
+
+.timeline-result--highlight {
+  background: rgba(236, 72, 153, 0.15);
+  border-left-color: var(--color-secondary);
+}
+
+.cronograma .btn-cta {
+  display: block;
+  max-width: 400px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+/* Mobile Timeline */
+@media (max-width: 600px) {
+  .timeline::before {
+    left: 15px;
+  }
+
+  .timeline-item {
+    padding-left: 50px;
+  }
+
+  .timeline-marker {
+    width: 32px;
+    height: 32px;
+    font-size: 0.75rem;
+  }
+}
+
+/* ==========================================================================
+   OBJEÇÕES SECTION
+   ========================================================================== */
+.objecoes {
+  padding: var(--section-spacing) 1.25rem;
+  background: rgba(0, 0, 0, 0.3);
+}
+
+.objecoes-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  max-width: 700px;
+  margin: 0 auto 2rem;
+}
+
+.objecao-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius);
+  padding: 1.5rem;
+  position: relative;
+}
+
+.objecao-quote {
+  font-size: 4rem;
+  line-height: 1;
+  color: var(--color-primary);
+  opacity: 0.3;
+  position: absolute;
+  top: 0.5rem;
+  left: 1rem;
+}
+
+.objecao-card p {
+  margin: 0;
+  font-size: 1.1rem;
+  font-style: italic;
+  color: var(--text-secondary);
+  padding-top: 1rem;
+}
+
+.objecao-resposta {
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.objecao-resposta p {
+  color: var(--text-secondary);
+  font-size: 1.1rem;
+}
+
+/* ==========================================================================
+   GARANTIA SECTION
+   ========================================================================== */
+.garantia {
+  padding: var(--section-spacing) 1.25rem;
+}
+
+.garantia-card {
+  background: var(--bg-card);
+  border: 2px solid #22c55e;
+  border-radius: var(--border-radius);
+  padding: 3rem 2rem;
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.garantia-icon {
+  color: #22c55e;
+  margin-bottom: 1rem;
+}
+
+.garantia-card h2 {
+  font-size: 1.75rem;
+  margin-bottom: 1rem;
+}
+
+.garantia-card p {
+  color: var(--text-secondary);
+  margin-bottom: 2rem;
+  font-size: 1.1rem;
+}
+
+.btn-cta--garantia {
+  background: #22c55e;
+  box-shadow: 0 4px 20px rgba(34, 197, 94, 0.4);
+}
+
+.btn-cta--garantia:hover {
+  box-shadow: 0 8px 30px rgba(34, 197, 94, 0.5);
+}
+
+/* ==========================================================================
+   AUTORIDADE SECTION
+   ========================================================================== */
+.autoridade {
+  padding: var(--section-spacing) 1.25rem;
+  background: rgba(0, 0, 0, 0.3);
+}
+
+.autoridade-wrapper {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  align-items: center;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+@media (min-width: 768px) {
+  .autoridade-wrapper {
+    grid-template-columns: 300px 1fr;
+    gap: 3rem;
+  }
+}
+
+.autoridade-foto img {
+  width: 240px;
+  height: 240px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: top center;
+  margin: 0 auto;
+  display: block;
+  border: 5px solid transparent;
+  background:
+    linear-gradient(var(--bg-dark), var(--bg-dark)) padding-box,
+    var(--gradient-highlight) border-box;
+  box-shadow: 0 0 40px rgba(236, 72, 153, 0.4);
+}
+
+.autoridade-texto h2 {
+  font-size: clamp(1.5rem, 4vw, 2rem);
+  margin-bottom: 1rem;
+}
+
+.autoridade-texto p {
+  color: var(--text-secondary);
+  margin-bottom: 1rem;
+}
+
+.autoridade-stats {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin: 1.5rem 0;
+}
+
+.stat {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-weight: 500;
+}
+
+.stat-icon {
+  font-size: 1.25rem;
+}
+
+.autoridade-quote {
+  background: var(--bg-card);
+  border-left: 4px solid var(--color-primary);
+  padding: 1.25rem;
+  margin: 1.5rem 0 0;
+  border-radius: 0 var(--border-radius) var(--border-radius) 0;
+  font-style: italic;
+  color: var(--text-secondary);
+}
+
+/* ==========================================================================
+   PREÇOS SECTION
+   ========================================================================== */
+.precos {
+  padding: var(--section-spacing) 1.25rem;
+}
+
+.precos-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  max-width: 950px;
+  margin: 0 auto 2rem;
+}
+
+/* Grid de 2 colunas */
+.precos-grid--2cols {
+  max-width: 700px;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+@media (max-width: 600px) {
+  .precos-grid--2cols {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Barra de Progresso - Preços */
+.preco-progress {
+  margin-bottom: 1rem;
+  position: relative;
+}
+
+.preco-progress-bar {
+  height: 8px;
+  background: var(--gradient-highlight);
+  border-radius: 4px;
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+}
+
+.preco-progress-bar::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  animation: shimmer 2s infinite;
+}
+
+.preco-progress-text {
+  display: block;
+  font-size: 0.7rem;
+  color: var(--color-secondary);
+  margin-top: 0.35rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.preco-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius);
+  padding: 2rem 1.5rem;
+  text-align: center;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.preco-destaque {
+  position: absolute;
+  top: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--gradient-highlight);
+  padding: 0.4rem 1rem;
+  border-radius: 50px;
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  white-space: nowrap;
+}
+
+.preco-header {
+  margin-bottom: 1rem;
+}
+
+.preco-lote {
+  display: block;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--text-muted);
+  margin-bottom: 0.25rem;
+}
+
+.preco-status {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+}
+
+.preco-valor {
+  margin-bottom: 1.5rem;
+}
+
+.preco-de {
+  display: block;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  text-decoration: line-through;
+  margin-bottom: 0.25rem;
+}
+
+.preco-por {
+  font-size: 2.5rem;
+  font-weight: 800;
+}
+
+.preco-features {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1.5rem;
+  flex-grow: 1;
+}
+
+.preco-features li {
+  padding: 0.5rem 0;
+  border-top: 1px solid var(--border-color);
+  font-size: 0.9rem;
+}
+
+.preco-features li.disabled {
+  color: var(--text-muted);
+}
+
+.preco-features li.locked {
+  color: var(--text-muted);
+}
+
+.btn-preco {
+  display: block;
+  width: 100%;
+  padding: 1rem;
+  border: none;
+  border-radius: 50px;
+  font-size: 1rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  text-align: center;
+}
+
+.btn-preco--ativo {
+  background: var(--gradient-cta);
+  color: white;
+  box-shadow: 0 4px 20px rgba(139, 92, 246, 0.4);
+}
+
+.btn-preco--ativo:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(139, 92, 246, 0.5);
+}
+
+.btn-preco--disabled {
+  background: var(--bg-card);
+  color: var(--text-muted);
+  cursor: not-allowed;
+}
+
+/* Card Estados */
+.preco-card--esgotado {
+  opacity: 0.6;
+}
+
+.preco-card--ativo {
+  border-color: var(--color-primary);
+  box-shadow: var(--shadow-glow);
+  transform: scale(1.02);
+}
+
+.preco-card--breve {
+  opacity: 0.7;
+}
+
+.selos-seguranca {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+}
+
+/* ==========================================================================
+   FAQ SECTION
+   ========================================================================== */
+.faq {
+  padding: var(--section-spacing) 1.25rem;
+  background: rgba(0, 0, 0, 0.3);
+}
+
+.faq .accordion {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.faq details {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius);
+  margin-bottom: 1rem;
+  overflow: hidden;
+}
+
+.faq summary {
+  padding: 1.25rem;
+  cursor: pointer;
+  font-weight: 600;
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.faq summary::after {
+  content: '+';
+  font-size: 1.5rem;
+  color: var(--color-primary);
+  transition: transform 0.3s ease;
+}
+
+.faq details[open] summary::after {
+  transform: rotate(45deg);
+}
+
+.faq details p {
+  padding: 0 1.25rem 1.25rem;
+  margin: 0;
+  color: var(--text-secondary);
+}
+
+/* ==========================================================================
+   FOOTER
+   ========================================================================== */
+footer {
+  padding: 3rem 1.25rem;
+  text-align: center;
+  border-top: 1px solid var(--border-color);
+}
+
+footer p {
+  margin-bottom: 1rem;
+  font-weight: 500;
+}
+
+footer small {
+  display: block;
+  max-width: 600px;
+  margin: 0 auto;
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+/* ==========================================================================
+   MOBILE OPTIMIZATIONS
+   ========================================================================== */
+@media (max-width: 480px) {
+  :root {
+    --section-spacing: 3.5rem;
+  }
+
+  .hero {
+    min-height: auto;
+    padding: 3rem 1rem;
+  }
+
+  .lotes {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .lote {
+    width: 100%;
+    max-width: 280px;
+  }
+
+  .btn-cta {
+    width: 100%;
+    padding: 1rem 1.5rem;
+    font-size: 0.9rem;
+  }
+
+  .precos-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .preco-card--ativo {
+    transform: none;
+  }
+}
+
+/* ==========================================================================
+   PERFORMANCE OPTIMIZATIONS
+   ========================================================================== */
+.cronograma,
+.objecoes,
+.garantia,
+.autoridade,
+.precos,
+.faq {
+  content-visibility: auto;
+  contain-intrinsic-size: 800px;
+  /* Estimativa de altura para evitar layout shift */
+}

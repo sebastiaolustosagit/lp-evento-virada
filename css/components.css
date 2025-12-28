@@ -1,0 +1,171 @@
+/* ==========================================================================
+   Components - Complementa Pico CSS
+   ========================================================================== */
+
+/* ==========================================================================
+   Buttons (extensão do Pico)
+   ========================================================================== */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.btn-full {
+  width: 100%;
+}
+
+/* ==========================================================================
+   Forms (extensão do Pico)
+   ========================================================================== */
+
+.form-group {
+  margin-bottom: 0;
+}
+
+/* Estados de erro */
+input.error,
+input[aria-invalid="true"] {
+  border-color: var(--pico-del-color, #c93838) !important;
+}
+
+/* Feedback de formulário */
+.form-feedback {
+  padding: 0.75rem 1rem;
+  border-radius: var(--pico-border-radius);
+  font-size: 0.875rem;
+  margin-top: 1rem;
+}
+
+.form-feedback.success {
+  color: var(--pico-ins-color, #388e3c);
+  background-color: rgba(56, 142, 60, 0.1);
+}
+
+.form-feedback.error {
+  color: var(--pico-del-color, #c93838);
+  background-color: rgba(201, 56, 56, 0.1);
+}
+
+/* intl-tel-input - compatibilidade com Pico CSS */
+.iti {
+  width: 100%;
+  display: block;
+}
+
+.iti input[type="tel"],
+.iti--separate-dial-code input[type="tel"],
+.iti--separate-dial-code .iti__tel-input {
+  width: 100%;
+  padding-left: 88px !important;
+}
+
+.iti__country-container {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  padding: 1px;
+  z-index: 2;
+}
+
+.iti__country-name {
+  display: none;
+}
+
+/* ==========================================================================
+   Accordion (usando <details> nativo do Pico)
+   ========================================================================== */
+
+.accordion {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+/* ==========================================================================
+   Ticker Carousel (CSS puro - loop infinito)
+   Uso: <div class="ticker"><div class="ticker-track">...</div></div>
+   Duplique os itens dentro de ticker-track para loop contínuo
+   ========================================================================== */
+
+.ticker {
+  overflow: hidden;
+}
+
+.ticker-track {
+  display: flex;
+  width: max-content;
+  animation: ticker 20s linear infinite;
+}
+
+.ticker-track:hover {
+  animation-play-state: paused;
+}
+
+.ticker-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem 2rem;
+  font-weight: 600;
+  opacity: 0.7;
+  white-space: nowrap;
+}
+
+/* Variações de velocidade */
+.ticker--fast .ticker-track {
+  animation-duration: 10s;
+}
+
+.ticker--slow .ticker-track {
+  animation-duration: 30s;
+}
+
+@keyframes ticker {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+/* ==========================================================================
+   Hero Section
+   ========================================================================== */
+
+.hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 80vh;
+  padding: 4rem var(--container-padding);
+  text-align: center;
+}
+
+.hero h1 {
+  margin-bottom: 0;
+}
+
+.hero p {
+  margin-top: 1rem;
+  max-width: 600px;
+}
+
+.hero-cta {
+  margin-top: 2rem;
+}
+
+/* ==========================================================================
+   Section
+   ========================================================================== */
+
+.section {
+  padding: 4rem var(--container-padding);
+}
+
+.section-title {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
