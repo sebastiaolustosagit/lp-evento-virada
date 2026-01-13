@@ -56,55 +56,79 @@
 
   <!-- Barra Topo -->
   <header class="top-bar">
-    <div class="container">
-      <p>🔴 O DESAFIO COMEÇA EM: <strong id="countdown"></strong></p>
-    </div>
+    <p>🔴 5 Dias de Desafio Ao Vivo - 19 a 23 de Janeiro</p>
   </header>
 
   <main>
-    <!-- HERO SECTION -->
-    <section class="hero hero--compact">
+    <!-- HERO SECTION - SPLIT LAYOUT -->
+    <section class="hero-split" id="hero">
+      <div class="hero-split__wrapper">
+        <div class="hero-split__content">
+          <h1 class="hero-split__headline">
+            O único método capaz de gerar até
+            <span class="hl-orange">R$ 150 mil a mais</span>
+            em vendas para sua loja de
+            <span class="hl-box">MODA INFANTIL</span>
+            ainda em Janeiro.
+          </h1>
+          <p class="hero-split__subheadline">
+            5 Dias de Desafio Ao Vivo (19 a 23 de Janeiro). Todo dia uma tarefa:
+            <strong>você copia, implementa e fatura.</strong>
+          </p>
+          <a href="#depoimentos" class="hero-split__cta">
+            QUERO FATURAR MAIS
+          </a>
+        </div>
+        <div class="hero-split__image">
+          <picture>
+            <source media="(max-width: 1023px)" srcset="/.netlify/images?url=/images/hero-mobile-final.webp&w=800&q=85">
+            <img src="/.netlify/images?url=/images/rodrigo-cutout.png&w=800&q=85" alt="Rodrigo Santana" loading="eager"
+              fetchpriority="high">
+          </picture>
+        </div>
+      </div>
+    </section>
+
+    <!-- DEPOIMENTOS SECTION -->
+    <section class="depoimentos" id="depoimentos">
       <div class="container">
-        <span class="hero-tag" data-animate="fade-up">EVENTO 100% ONLINE E AO VIVO</span>
-        <h1 data-animate="fade-up">O único método capaz de gerar até <span class="highlight">R$ 150 mil a
-            mais</span> em vendas para sua loja de <span class="highlight-box">MODA INFANTIL</span> ainda em
-          Janeiro.</h1>
-        <p class="hero-subtitle" data-animate="fade-up">5 Dias de Desafio Ao Vivo (19 a 23 de Janeiro). Todo dia uma
-          tarefa: <strong>você copia, implementa e fatura.</strong></p>
-
-        <div class="lotes-inline" data-animate="fade-up">
-          <div class="lote-inline lote-inline--ativo">
-            <span class="lote-inline-nome">LOTE 1:</span>
-            <span class="lote-inline-preco">R$ 17,00</span>
-            <span class="lote-inline-status">Vagas Limitadas</span>
-            <div class="lote-inline-progress">
-              <div class="lote-inline-progress-bar"></div>
-              <span>106% vendido</span>
-            </div>
-          </div>
-          <div class="lote-inline lote-inline--breve">
-            <span class="lote-inline-nome">LOTE 2 (EM BREVE):</span>
-            <span class="lote-inline-preco">R$ 35,00</span>
-          </div>
+        <h2 class="depoimentos__title">Quem já esteve em nosso desafio antes:</h2>
+        <div class="depoimentos__grid">
+          <img src="/.netlify/images?url=/images/depoimentos/AB27E548-CF37-4BA3-A490-D1707B75CE5D.webp&w=400&q=80"
+            alt="Depoimento" loading="lazy">
+          <img src="/.netlify/images?url=/images/depoimentos/IMG_6727.webp&w=400&q=80" alt="Depoimento" loading="lazy">
+          <img src="/.netlify/images?url=/images/depoimentos/IMG_6737.webp&w=400&q=80" alt="Depoimento" loading="lazy">
+          <img src="/.netlify/images?url=/images/depoimentos/IMG_6743.webp&w=400&q=80" alt="Depoimento" loading="lazy">
+          <img src="/.netlify/images?url=/images/depoimentos/IMG_6747.webp&w=400&q=80" alt="Depoimento" loading="lazy">
+          <img src="/.netlify/images?url=/images/depoimentos/IMG_6759.webp&w=400&q=80" alt="Depoimento" loading="lazy">
+          <img src="/.netlify/images?url=/images/depoimentos/IMG_6778.webp&w=400&q=80" alt="Depoimento" loading="lazy">
+          <!-- Mobile-only CTA after 7th testimonial -->
+          <a href="#cronograma" class="depoimentos__cta depoimentos__cta--mobile">QUERO PARTICIPAR DO DESAFIO</a>
+          <img src="/.netlify/images?url=/images/depoimentos/IMG_6779.webp&w=400&q=80" alt="Depoimento" loading="lazy">
+          <img src="/.netlify/images?url=/images/depoimentos/IMG_6797.webp&w=400&q=80" alt="Depoimento" loading="lazy">
+          <img src="/.netlify/images?url=/images/depoimentos/IMG_6799.webp&w=400&q=80" alt="Depoimento" loading="lazy">
+          <img src="/.netlify/images?url=/images/depoimentos/IMG_6800.webp&w=400&q=80" alt="Depoimento" loading="lazy">
+          <img src="/.netlify/images?url=/images/depoimentos/IMG_6804.webp&w=400&q=80" alt="Depoimento" loading="lazy">
+          <img src="/.netlify/images?url=/images/depoimentos/IMG_6857.webp&w=400&q=80" alt="Depoimento" loading="lazy">
+          <img src="/.netlify/images?url=/images/depoimentos/IMG_6893.webp&w=400&q=80" alt="Depoimento" loading="lazy">
+          <img src="/.netlify/images?url=/images/depoimentos/IMG_7014.webp&w=400&q=80" alt="Depoimento" loading="lazy">
+          <!-- Mobile-only CTA after 14th testimonial -->
+          <a href="#cronograma" class="depoimentos__cta depoimentos__cta--mobile">QUERO PARTICIPAR DO DESAFIO</a>
+          <img src="/.netlify/images?url=/images/depoimentos/IMG_7084.webp&w=400&q=80" alt="Depoimento" loading="lazy">
+          <img src="/.netlify/images?url=/images/depoimentos/IMG_7095.webp&w=400&q=80" alt="Depoimento" loading="lazy">
+          <img src="/.netlify/images?url=/images/depoimentos/IMG_7097.webp&w=400&q=80" alt="Depoimento" loading="lazy">
+          <img src="/.netlify/images?url=/images/depoimentos/IMG_7121.webp&w=400&q=80" alt="Depoimento" loading="lazy">
+          <img src="/.netlify/images?url=/images/depoimentos/IMG_7186.webp&w=400&q=80" alt="Depoimento" loading="lazy">
+          <img src="/.netlify/images?url=/images/depoimentos/IMG_7187.webp&w=400&q=80" alt="Depoimento" loading="lazy">
+          <img src="/.netlify/images?url=/images/depoimentos/IMG_7706.webp&w=400&q=80" alt="Depoimento" loading="lazy">
+          <img src="/.netlify/images?url=/images/depoimentos/IMG_7808.webp&w=400&q=80" alt="Depoimento" loading="lazy">
+          <img src="/.netlify/images?url=/images/depoimentos/IMG_7859.webp&w=400&q=80" alt="Depoimento" loading="lazy">
+          <img src="/.netlify/images?url=/images/depoimentos/IMG_7860.webp&w=400&q=80" alt="Depoimento" loading="lazy">
+          <img src="/.netlify/images?url=/images/depoimentos/IMG_8672.webp&w=400&q=80" alt="Depoimento" loading="lazy">
+          <img src="/.netlify/images?url=/images/depoimentos/IMG_8673.webp&w=400&q=80" alt="Depoimento" loading="lazy">
+          <img src="/.netlify/images?url=/images/depoimentos/IMG_8674.webp&w=400&q=80" alt="Depoimento" loading="lazy">
         </div>
-
-        <a href="#cronograma" class="btn-cta btn-cta--hero" data-animate="scale-in">
-          QUERO FATURAR MAIS <span class="btn-arrow">↓</span>
-        </a>
-
-        <div class="garantia-selo" data-animate="fade-up">
-          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
-            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10" />
-            <path d="m9 12 2 2 4-4" />
-          </svg>
-          <span>Garantia de Satisfação</span>
-        </div>
-
-        <div class="hero-foto" data-animate="fade-up">
-          <img src="https://lp-evento-virada.netlify.app/.netlify/images?url=/images/rodrigo-santana.webp&w=400&q=85"
-            alt="Rodrigo Santana" loading="eager" fetchpriority="high" width="240" height="240">
-        </div>
+        <a href="#cronograma" class="depoimentos__cta">QUERO PARTICIPAR DO DESAFIO</a>
       </div>
     </section>
 
@@ -295,7 +319,7 @@
           </div>
           <h2>Garantia Incondicional</h2>
           <p>Se você participar por 5 dias e não ver o caminho claro para os 150 mil, eu devolvo cada centavo dos
-            seus <strong>R$ 17,00</strong>. Sem letras miúdas.</p>
+            seus <strong>R$ 27,00</strong>. Sem letras miúdas.</p>
           <a href="#precos" class="btn-cta btn-cta--garantia">
             Quero minha vaga com risco zero
           </a>
@@ -357,7 +381,7 @@
             </div>
             <div class="preco-valor">
               <span class="preco-de">De R$ 197</span>
-              <span class="preco-por">R$ 17</span>
+              <span class="preco-por">R$ 27</span>
             </div>
             <div class="preco-progress">
               <div class="preco-progress-bar"></div>
