@@ -26,6 +26,26 @@
   <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
 
   <link rel="stylesheet" href="style.css">
+
+  <!-- Meta Pixel Code -->
+  <script>
+    !function (f, b, e, v, n, t, s) {
+      if (f.fbq) return; n = f.fbq = function () {
+        n.callMethod ?
+          n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+      };
+      if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = '2.0';
+      n.queue = []; t = b.createElement(e); t.async = !0;
+      t.src = v; s = b.getElementsByTagName(e)[0];
+      s.parentNode.insertBefore(t, s)
+    }(window, document, 'script',
+      'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '2000319523807976');
+    fbq('track', 'PageView');
+  </script>
+  <noscript><img height="1" width="1" style="display:none"
+      src="https://www.facebook.com/tr?id=2000319523807976&ev=PageView&noscript=1" /></noscript>
+  <!-- End Meta Pixel Code -->
 </head>
 <body>
 
@@ -263,33 +283,34 @@
          ========================================== -->
     <section class="about section-alt" id="quem">
       <div class="container">
-        <div class="about-grid">
-          <div class="about-visual" data-aos="fade-right">
-            <div class="about-accent" aria-hidden="true"></div>
-            <div class="about-stats">
-              <div class="about-stat">
-                <span class="about-stat-number glow-text">3000+</span>
-                <span class="about-stat-label">lojistas transformados</span>
+        <div class="about-wrapper" data-aos="fade-up">
+          <div class="about-foto">
+            <img src="https://lp-evento-virada.netlify.app/.netlify/images?url=/images/rodrigo-santana.webp&w=600&q=85" alt="Rodrigo Santana - Especialista em Varejo de Moda Infantil" loading="lazy" width="240" height="240" decoding="async">
+          </div>
+          <div class="about-text">
+            <h2>Quem é o homem por trás dos <span class="about-highlight-inline">R$ 6 Milhões</span> em vendas?</h2>
+            <p><strong>Rodrigo Santana.</strong> O especialista que provou que é possível construir um império de varejo em qualquer lugar do Brasil, direto do Acre.</p>
+            <p>Ele não vende teoria de palco; ele vive o campo de batalha diariamente.</p>
+            <p>Hoje, lidera um ecossistema robusto:</p>
+
+            <div class="about-stats-row">
+              <div class="about-stat-item">
+                <span class="about-stat-icon">🚀</span>
+                <span>8 Operações de Moda Infantil</span>
               </div>
-              <div class="about-stat">
-                <span class="about-stat-number glow-text">2</span>
-                <span class="about-stat-label">desafios realizados</span>
+              <div class="about-stat-item">
+                <span class="about-stat-icon">🍭</span>
+                <span>Franqueado Fini</span>
+              </div>
+              <div class="about-stat-item">
+                <span class="about-stat-icon">🏢</span>
+                <span>Liderança de mais de 2000 colaboradores em grupo empresarial</span>
               </div>
             </div>
-          </div>
-          <div class="about-text" data-aos="fade-left">
-            <h2>Rodrigo Pipoquinhas</h2>
-            <p>
-              Especialista em vendas e marketing para moda infantil. Fundador da
-              Paravati Academy e parceiro estratégico da Paravati Atacado.
-            </p>
-            <p>
-              Já ajudou centenas de lojistas a saírem do "mês no vermelho"
-              para faturamentos recordes — com método, não com sorte.
-            </p>
-            <p class="about-highlight">
-              "Venda não é talento. É método. E eu vou te provar em 5 dias."
-            </p>
+
+            <blockquote class="about-quote">
+              "Em dezembro de 2025, apenas com operações infantis, atingi a marca de <strong>R$ 1 milhão faturado</strong> em um único mês. Vou abrir essa caixa preta para você."
+            </blockquote>
           </div>
         </div>
       </div>

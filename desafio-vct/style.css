@@ -288,9 +288,10 @@ body {
 }
 
 .hero-title-main {
-  font-size: clamp(2.2rem, 8vw, 4.5rem);
+  font-size: clamp(1.45rem, 5.5vw, 4.5rem);
   line-height: 0.95;
   letter-spacing: 0.03em;
+  white-space: nowrap;
 }
 
 .hero-title-accent {
@@ -301,7 +302,7 @@ body {
 }
 
 .hero-title-highlight {
-  font-size: clamp(2.6rem, 9.5vw, 5.5rem);
+  font-size: clamp(1.7rem, 6.5vw, 5.5rem);
   line-height: 0.95;
   letter-spacing: 0.02em;
   color: var(--color-primary);
@@ -766,93 +767,97 @@ body {
 }
 
 /* ==========================================================================
-   QUEM É — Offset Portrait
+   QUEM É — Autoridade
    ========================================================================== */
 
-.about-grid {
-  display: grid;
-  gap: 3rem;
+.about-wrapper {
+  display: flex;
+  flex-direction: column;
   align-items: center;
+  gap: 2rem;
+  max-width: 800px;
+  margin-inline: auto;
 }
 
-.about-visual {
-  position: relative;
+.about-foto {
+  flex-shrink: 0;
 }
 
-.about-accent {
-  position: absolute;
-  inset: -1rem;
-  background: linear-gradient(135deg, rgba(0, 232, 123, 0.08), transparent 60%);
-  border-radius: 16px;
-  z-index: 0;
-}
-
-.about-stats {
-  position: relative;
-  z-index: 1;
-  display: grid;
-  gap: 1.5rem;
-}
-
-.about-stat {
-  background: var(--color-surface);
-  border: 1px solid var(--color-border);
-  border-radius: 12px;
-  padding: 1.25rem 1.5rem;
-  text-align: center;
-  transition: box-shadow 0.3s ease;
-}
-
-.about-stat:hover {
-  box-shadow: 0 0 30px rgba(0, 232, 123, 0.12);
-}
-
-.about-stat-number {
-  display: block;
-  font-family: var(--font-heading);
-  font-size: clamp(2rem, 5vw, 3rem);
-  color: var(--color-primary);
-  margin-bottom: 0.25rem;
-}
-
-.about-stat-label {
-  font-size: 0.85rem;
-  color: var(--color-text-muted);
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
+.about-foto img {
+  width: clamp(140px, 30vw, 240px);
+  height: clamp(140px, 30vw, 240px);
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid var(--color-primary);
+  box-shadow: 0 0 30px rgba(0, 232, 123, 0.2);
 }
 
 .about-text h2 {
-  font-size: clamp(2rem, 5vw, 3rem);
-  text-transform: uppercase;
+  font-size: clamp(1.5rem, 4vw, 2.2rem);
   margin-bottom: 1rem;
+  line-height: 1.2;
+}
+
+.about-highlight-inline {
+  color: var(--color-primary);
+  text-shadow: 0 0 20px rgba(0, 232, 123, 0.3);
 }
 
 .about-text p {
   color: var(--color-text-muted);
-  font-size: clamp(0.95rem, 2vw, 1.05rem);
+  font-size: clamp(0.9rem, 2vw, 1.05rem);
   line-height: 1.6;
-  margin-bottom: 1rem;
+  margin-bottom: 0.75rem;
 }
 
-.about-highlight {
-  color: var(--color-primary) !important;
-  font-weight: 700;
-  font-size: clamp(1rem, 2.5vw, 1.15rem) !important;
-  font-style: italic;
+.about-text p strong {
+  color: var(--color-text);
+}
+
+.about-stats-row {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-block: 1rem;
+}
+
+.about-stat-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 10px;
+  padding: 0.75rem 1rem;
+  font-size: clamp(0.85rem, 2vw, 0.95rem);
+  color: var(--color-text);
+}
+
+.about-stat-icon {
+  font-size: 1.25rem;
+  flex-shrink: 0;
+}
+
+.about-quote {
   border-left: 3px solid var(--color-primary);
   padding-left: 1rem;
-  margin-top: 0.5rem;
+  margin-top: 1.25rem;
+  font-style: italic;
+  font-size: clamp(0.9rem, 2vw, 1rem);
+  color: var(--color-text-muted);
+  line-height: 1.6;
+}
+
+.about-quote strong {
+  color: var(--color-primary);
 }
 
 @media (min-width: 768px) {
-  .about-grid {
-    grid-template-columns: 1fr 1fr;
-    gap: 4rem;
-  }
-
-  .about-stats {
-    grid-template-columns: 1fr;
+  .about-wrapper {
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 3rem;
+    text-align: left;
   }
 }
 
@@ -957,7 +962,8 @@ body {
   gap: 0.75rem;
   transition: box-shadow 0.3s ease;
   min-width: 0;
-  overflow: hidden;
+  overflow: visible;
+  word-break: break-word;
 }
 
 .preco-card--ativo {
@@ -975,16 +981,16 @@ body {
 
 .preco-destaque {
   position: absolute;
-  top: -0.75rem;
+  top: -0.65rem;
   left: 50%;
   transform: translateX(-50%);
   background: var(--color-primary);
   color: #0B1120;
   font-weight: 700;
-  font-size: 0.7rem;
+  font-size: clamp(0.55rem, 1.8vw, 0.7rem);
   text-transform: uppercase;
-  letter-spacing: 0.1em;
-  padding: 0.3rem 1rem;
+  letter-spacing: 0.08em;
+  padding: 0.25rem clamp(0.5rem, 2vw, 1rem);
   border-radius: 100px;
   white-space: nowrap;
 }
