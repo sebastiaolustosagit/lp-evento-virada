@@ -1,6 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
   initAOS();
   initYear();
+  initStickyCta();
 });
 
 function initAOS() {
@@ -30,4 +31,22 @@ function initAOS() {
 function initYear() {
   const el = document.getElementById('year');
   if (el) el.textContent = new Date().getFullYear();
+}
+
+function initStickyCta() {
+  const sticky = document.getElementById('stickyCta');
+  const trigger = document.getElementById('resultados');
+  if (!sticky || !trigger) return;
+
+  const update = () => {
+    const rect = trigger.getBoundingClientRect();
+    const midpoint = rect.top + rect.height / 2;
+    const shouldShow = midpoint <= window.innerHeight / 2;
+    sticky.classList.toggle('is-visible', shouldShow);
+    sticky.setAttribute('aria-hidden', !shouldShow);
+  };
+
+  window.addEventListener('scroll', update, { passive: true });
+  window.addEventListener('resize', update, { passive: true });
+  update();
 }
